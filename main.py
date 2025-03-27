@@ -19,5 +19,13 @@ def training(prof: str):
     return render_template('training.html', **params)
 
 
+@app.route('/list_prof/<list>')
+def list_of_professions(list):
+    if list != 'ol' and list != 'ul':
+        return "Неверный параметр"
+    params = ['Инженер-исследователь', "Пилот", "Строитель", "Экзобиолог", "Врач", "Климатолог"]
+    return render_template('list.html', params=params, param=list)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')

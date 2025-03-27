@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список профессий</title>
+</head>
+<body>
+{% extends "base.html" %} {% block content %}
+{% if param == 'ol' %}
+<ol>
+    {% for prof in params %}
+    <li>{{ prof }}</li>
+    {% endfor %}
+</ol>
+{% elif param == 'ul' %}
+<ul>
+    {% for prof in params %}
+    <li>{{ prof }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
+</body>
+</html>
