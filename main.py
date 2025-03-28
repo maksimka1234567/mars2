@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request
 import json
 import random
+import os
 
 app = Flask(__name__)
 
@@ -61,22 +62,24 @@ def table_param(gender, age):
     return render_template('table.html', **params)
 
 
+images_folder = os.path.join(os.getcwd(), 'static', 'landscapes')
+image_files = [
+    f'static/landscapes/{f}'
+    for f in os.listdir(images_folder)
+    if os.path.isfile(os.path.join(images_folder, f))
+]
+count = len(image_files) + 1
+
+
 @app.route('/gallery', methods=["GET", "POST"])
 def gallery():
-    count = 6
-    landscapes = [
-        "static/landscapes/landscape1.png",
-        "static/landscapes/landscape2.png",
-        "static/landscapes/landscape3.png",
-        "static/landscapes/landscape4.png",
-        "static/landscapes/landscape5.png"
-    ]
+    global count
     if request.method == 'POST':
         f = request.files['file']
-        f.save(f'static/img/landscape{count}.png')
-        landscapes.append(f'static/img/landscape{count}.png')
+        f.save(f'static/landscapes/landscape{count}.png')
+        image_files.append(f'static/landscapes/landscape{count}.png')
         count += 1
-    return render_template('gallery.html', landscapes=landscapes, count=count)
+    return render_template('gallery.html', landscapes=image_files, count=count)
 
 
 @app.route('/member')
