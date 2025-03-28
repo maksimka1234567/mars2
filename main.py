@@ -84,7 +84,7 @@ def gallery():
 
 @app.route('/member')
 def member():
-    with open("members.json", "rt", encoding="utf8") as f:
+    with open("members.json", "rt", encoding="utf-8") as f:
         members_list = json.loads(f.read())
     member = random.choice(members_list["members"])
     member["about"] = ", ".join(sorted(member["about"]))
