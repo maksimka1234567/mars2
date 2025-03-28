@@ -86,9 +86,9 @@ def gallery():
 def member():
     with open("members.json", "rt", encoding="utf-8") as f:
         members_list = json.loads(f.read())
-    member = random.choice(members_list["members"])
-    member["about"] = ", ".join(sorted(member["about"]))
-    return render_template('members.html', member=member)
+    member1 = random.choice(members_list["members"])
+    member1["about"] = ", ".join(sorted(member1["about"]))
+    return render_template('members.html', member=member1)
 
 
 if __name__ == '__main__':
