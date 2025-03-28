@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 
 app = Flask(__name__)
 
@@ -35,6 +35,14 @@ def answer():
     params = {'surname': 'Watny', 'name': 'Mark', 'education': 'выше среднего', 'profession': 'штурман марсохода',
               'gender': 'male', 'motivation': 'Всегда мечтал застрять на Марсе!', 'ready': True, 'style_url': url_for('static', filename='css/main.css')}
     return render_template('auto_answer.html', **params)
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == "GET":
+        return render_template('double security.html')
+    elif request.method == "POST":
+        return "Доступ открыт"
 
 
 if __name__ == '__main__':

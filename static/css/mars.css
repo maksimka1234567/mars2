@@ -1,0 +1,15 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.header-image {
+    padding-left: 50px;
+    width: auto;
+    height: 1.5em;
+    margin-right: 10px;
+}
+.header-title {
+    font-size: 30px;
+    margin: 0;
+}
