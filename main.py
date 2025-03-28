@@ -52,5 +52,12 @@ def distribution():
     return render_template('distribution.html', **params)
 
 
+@app.route('/table/<gender>/<int:age>')
+def table_param(gender, age):
+    params = {'gender': gender, 'age': age, 'child_img_url': '/static/img/child.jpg', 'adult_img_url': '/static/img/adult.jpg',
+              'style_url': url_for('static', filename='css/table.css')}
+    return render_template('table.html', **params)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')

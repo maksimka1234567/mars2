@@ -1,0 +1,26 @@
+.color-cell {
+    width: 200px;
+    max-width: 200px;
+}
+
+.image-cell {
+    width: 200px;
+    max-width: 200px;
+}
+
+.bg-opacity {
+    opacity: 0.5;
+}
+
+.drawing {
+    width: 100%;
+    height: auto;
+}
+
+.th1 {
+    background-color: #d3d3d3 !important; /* Серый цвет фона */
+    color: #333 !important; /* Цвет текста */
+    padding: 10px; /* Отступы внутри ячеек */
+    text-align: left; /* Выравнивание текста */
+    border: 1px solid #ccc; /* Граница ячеек */
+}
