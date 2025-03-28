@@ -1,4 +1,6 @@
 from flask import Flask, render_template, url_for, request
+import json
+import random
 
 app = Flask(__name__)
 
@@ -75,6 +77,15 @@ def gallery():
         landscapes.append(f'static/img/landscape{count}.png')
         count += 1
     return render_template('gallery.html', landscapes=landscapes, count=count)
+
+
+@app.route('/member')
+def member():
+    with open("members.json", "rt", encoding="utf8") as f:
+        members_list = json.loads(f.read())
+    member = random.choice(members_list["members"])
+    member["about"] = ", ".join(sorted(member["about"]))
+    return render_template('members.html', member=member)
 
 
 if __name__ == '__main__':

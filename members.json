@@ -1,0 +1,34 @@
+{
+    "members": [
+        {
+            "name": "Энди",
+            "surname": "Уир",
+            "photo": "/static/img/member1.jpg",
+            "about": ["астрогеолог", "специалист по радиационной защите", "картограф"]
+        },
+        {
+            "name": "Вальтер",
+            "surname": "Скотт",
+            "photo": "/static/img/member2.jpg",
+            "about": "капитан корабля"
+        },
+        {
+            "name": "Джек",
+            "surname": "Грин",
+            "photo": "/static/img/member3.jpg",
+            "about": ["доктор", "главный врач корабля", "нейрохирург"]
+        },
+        {
+            "name": "Иван",
+            "surname": "Сергеев",
+            "photo": "/static/img/member4.jpg",
+            "about": ["штурман", "метеоролог", "помощник капитана"]
+        },
+        {
+            "name": "Джо",
+            "surname": "Энтони",
+            "photo": "/static/img/member5.jpg",
+            "about": ["юнга", "студент университета"]
+        }
+    ]
+}
