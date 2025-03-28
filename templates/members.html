@@ -10,7 +10,7 @@
 {% extends "base.html" %} {% block content %}
 <div class="container">
     <h2 align="center">{{ member["name"] }} {{ member["surname"] }}</h2><br>
-    <img src="{{ member["photo"] }}" alt="рисунок" class="drawing" />
+    <img src="{{ member['photo'] }}" alt="рисунок" class="drawing" />
     <div align="center">{{ member["about"] }}
     </div>
 </div>
