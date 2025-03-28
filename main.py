@@ -59,5 +59,23 @@ def table_param(gender, age):
     return render_template('table.html', **params)
 
 
+@app.route('/gallery', methods=["GET", "POST"])
+def gallery():
+    count = 6
+    landscapes = [
+        "static/landscapes/landscape1.png",
+        "static/landscapes/landscape2.png",
+        "static/landscapes/landscape3.png",
+        "static/landscapes/landscape4.png",
+        "static/landscapes/landscape5.png"
+    ]
+    if request.method == 'POST':
+        f = request.files['file']
+        f.save(f'static/img/landscape{count}.png')
+        landscapes.append(f'static/img/landscape{count}.png')
+        count += 1
+    return render_template('gallery.html', landscapes=landscapes, count=count)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
