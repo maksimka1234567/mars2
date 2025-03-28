@@ -29,5 +29,13 @@ def list_of_professions(list):
     return render_template('list.html', params=params, param=list)
 
 
+@app.route('/answer')
+@app.route('/auto_answer')
+def answer():
+    params = {'surname': 'Watny', 'name': 'Mark', 'education': 'выше среднего', 'profession': 'штурман марсохода',
+              'gender': 'male', 'motivation': 'Всегда мечтал застрять на Марсе!', 'ready': True, 'style_url': url_for('static', filename='css/main.css')}
+    return render_template('auto_answer.html', **params)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')

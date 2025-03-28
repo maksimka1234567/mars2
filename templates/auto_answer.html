@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}">
+</head>
+<body>
+{% extends "base.html" %} {% block content %}
+<div class="text-start mt-3">
+    <p>Фамилия: {{ surname }}</p>
+    <p>Имя: {{ name }}</p>
+    <p>Образование: {{ education }}</p>
+    <p>Профессия: {{ profession }}</p>
+    <p>Пол: {{ gender }}</p>
+    <p>Мотивация: {{ motivation }}</p>
+    <p>Готовы остаться на Марсе?: {{ ready }}</p>
+</div>
+{% endblock %}
+</body>
+</html>
