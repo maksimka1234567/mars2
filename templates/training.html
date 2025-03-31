@@ -7,13 +7,16 @@
 </head>
 <body>
 {% extends "base.html" %} {% block content %}
-<h2>
+<h2 align="center">
   {% if is_engineer %} Инженерные тренажёры {% else %} Научные симуляторы {%
   endif %}
 </h2>
-<img
-  src="{% if is_engineer %}{{ engineer_img_url }}{% else %}{{ science_img_url }}{% endif %}"
-/>
+<div class="d-flex justify-content-center">
+  <img
+    src="{% if is_engineer %}{{ engineer_img_url }}{% else %}{{ science_img_url }}{% endif %}"
+    alt="Simulator Image"
+  />
+</div>
 {% endblock %}
 </body>
 </html>
