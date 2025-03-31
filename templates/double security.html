@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/mars.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/mars1.css') }}">
 </head>
 <body>
 {% extends "base.html" %}
 {% block content %}
-<div class="header-container">
-    <img src="static/img/MARS.png" class="header-image">
-    <h2 class="header-title">Аварийный доступ</h2>
+<div class="container">
+    <div class="header-container">
+        <img src="static/img/MARS.png" class="header-image">
+        <h2 class="header-title">Аварийный доступ</h2>
+    </div>
+    <form action="/login" method="post" class="form">
+        <label for="astronaut_id">Id астронавта:</label><br>
+        <input type="text" id="astronaut_id" class="form-control" name="astronaut_id" required><br>
+        <label for="astronaut_password">Пароль астронавта:</label><br>
+        <input type="password" id="astronaut_password" class="form-control" name="astronaut_password" required><br>
+        <label for="captain_id">Id капитана:</label><br>
+        <input type="text" id="captain_id" class="form-control" name="captain_id" required><br>
+        <label for="captain_password">Пароль капитана:</label><br>
+        <input type="password" id="captain_password" class="form-control" name="captain_password" required><br>
+        <button type="submit" class="btn btn-primary">Доступ</button>
+    </form>
 </div>
-<form action="/login" method="post">
-    <label for="astronaut_id">Id астронавта:</label><br>
-    <input type="text" id="astronaut_id" class="form-control" name="astronaut_id" required><br>
-    <label for="astronaut_password">Пароль астронавта:</label><br>
-    <input type="password" id="astronaut_password" class="form-control" name="astronaut_password" required><br>
-    <label for="captain_id">Id капитана:</label><br>
-    <input type="text" id="captain_id" class="form-control" name="captain_id" required><br>
-    <label for="captain_password">Пароль капитана:</label><br>
-    <input type="password" id="captain_password" class="form-control" name="captain_password" required><br>
-    <button type="submit" class="btn btn-primary">Доступ</button>
-</form>
 {% endblock %}
 </body>
 </html>
