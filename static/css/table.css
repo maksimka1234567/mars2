@@ -1,26 +1,50 @@
+/* Контейнер для центрирования содержимого */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Выравнивание по центру */
+    justify-content: center; /* Центрирование по вертикали (если нужно) */
+    margin-top: 30px; /* Увеличенный отступ сверху */
+}
+
+/* Заголовок */
+.centered-title {
+    text-align: center; /* Выравнивание текста по центру */
+    margin-bottom: 30px; /* Увеличенный отступ между заголовком и таблицей */
+    font-size: 24px; /* Увеличенный размер шрифта */
+}
+
+/* Таблица */
+.centered-table {
+    width: 90%; /* Ширина таблицы (90% от ширины контейнера) */
+    max-width: 800px; /* Максимальная ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные границы */
+    margin: 0 auto; /* Центрирование таблицы */
+    text-align: center; /* Выравнивание текста внутри ячеек */
+}
+
+/* Ячейки таблицы */
 .color-cell {
-    width: 200px;
-    max-width: 200px;
+    width: 50%; /* Ширина ячейки с цветом */
+    height: 60px; /* Увеличенная высота ячейки */
 }
 
 .image-cell {
-    width: 200px;
-    max-width: 200px;
+    width: 50%; /* Ширина ячейки с изображением */
 }
 
-.bg-opacity {
-    opacity: 0.5;
-}
-
+/* Изображения */
 .drawing {
-    width: 100%;
-    height: auto;
+    max-width: 100%; /* Изображение не выходит за пределы ячейки */
+    height: auto; /* Сохранение пропорций */
+    margin-top: 10px; /* Отступ сверху для изображения */
 }
 
+/* Стиль для шапки таблицы */
 .th1 {
-    background-color: #d3d3d3 !important; /* Серый цвет фона */
-    color: #333 !important; /* Цвет текста */
-    padding: 10px; /* Отступы внутри ячеек */
-    text-align: left; /* Выравнивание текста */
+    background-color: #d3d3d3; /* Серый цвет фона */
+    color: #333; /* Цвет текста */
+    padding: 15px; /* Увеличенные отступы внутри ячеек */
     border: 1px solid #ccc; /* Граница ячеек */
+    font-size: 18px; /* Увеличенный размер шрифта */
 }
