@@ -3,11 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        /* Стиль для параграфов */
+        p {
+            margin-left: 600px; /* Отступ слева для текста */
+            margin-bottom: 10px; /* Отступ между параграфами */
+        }
+
+        /* Стиль для заголовка */
+        h2 {
+            margin-bottom: 20px; /* Отступ под заголовком */
+        }
+    </style>
 </head>
 <body>
-{% extends "base.html" %} {% block content %}
-<div class="text-start">
-  <h2 class="text-center">Размещение по каютам</h2>
+{% extends "base.html" %}
+{% block content %}
+<div>
+  <h2 align="center">Размещение по каютам</h2>
   {% for astronaut in astronauts %}
   <p>
     {{ astronaut }} - Каюта № {{ loop.index }} {% if loop.first %} - капитан
