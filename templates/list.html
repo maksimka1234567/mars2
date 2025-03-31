@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Список профессий</title>
+    <style>
+        /* Стиль для заголовка */
+        h3 {
+            margin-left: 150px; /* Сдвиг заголовка на 20px */
+        }
+
+        /* Стиль для списка */
+        ol, ul {
+            margin-left: 200px; /* Сдвиг списка на 150px */
+        }
+    </style>
 </head>
 <body>
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block content %}
+<h3>Список профессий</h3>
 {% if param == 'ol' %}
 <ol>
     {% for prof in params %}
